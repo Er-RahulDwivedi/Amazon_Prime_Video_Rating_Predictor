@@ -49,10 +49,15 @@ Clone the repository:
 
 Bash
 https://github.com/Er-RahulDwivedi/Amazon_Prime_Video_Rating_Predictor.git
+
+
 Install dependencies:
 
 Bash
+
 pip install -r requirements.txt
+
+
 Run the Jupyter Notebooks to view the full pipeline and results.
 
 📝 Conclusion
