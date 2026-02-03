@@ -1,38 +1,59 @@
-Amazon Prime Content Success Predictor
+Amazon Prime Video: Content Analysis & Predictive Modeling
+This project provides an end-to-end analytical and machine learning framework to evaluate content performance on Amazon Prime Video. By analyzing metadata from over 9,000 titles and 124,000 credits, the system identifies key success drivers and predicts audience reception with high accuracy.
 
-An end-to-end Machine Learning pipeline designed to predict whether a movie or TV show on Amazon Prime will be a "Hit" (IMDb score > 7.5). This project transforms raw streaming data into a deployable strategic tool for content acquisition.
+📌 Project Overview
+The streaming industry relies on data-driven content acquisition. This project transitions from intuitive decision-making to a quantitative framework, utilizing Exploratory Data Analysis (EDA) to uncover trends and Gradient Boosting models to predict if a title will be a "Hit" (High Rated) or "Average."
 
-Project Highlights
+🚀 Key Features
+Comprehensive EDA: Univariate, Bivariate, and Multivariate analysis of content types, release trends, and geographical production hubs.
 
-High Accuracy: Achieved a final model accuracy of 92% using optimized LightGBM.
-Data Balancing: Successfully handled a highly imbalanced dataset (113k average titles vs. 10k hits) using SMOTE.
-Explainable AI: Integrated SHAP (SHapley Additive exPlanations) to identify that Popularity and Runtime are the primary drivers of content ratings.
-Production Ready: Final model is serialized via joblib for immediate deployment into business dashboards.
-Tech Stack
+Statistical Hypothesis Testing: Implementation of T-Tests and Chi-Square tests to validate the significance of features like age certification and format.
 
-Language: Python 3.12
-Libraries: Pandas, NumPy, Matplotlib, Seaborn
-ML Algorithms: Random Forest, XGBoost, LightGBM
-Optimization: GridSearchCV, RandomizedSearchCV
-Evaluation: Precision, Recall, F1-Score, Confusion Matrix
-Business Impact
+Advanced NLP Pipeline: Processing of textual descriptions using Lemmatization, POS Tagging, and TF-IDF Vectorization.
 
-Risk Mitigation: High Precision scores ensure Amazon Prime avoids over-investing in titles predicted to be low-rated.
-Content Discovery: Strong Recall allows the platform to identify "Hidden Gems" that might otherwise be overlooked.
-Data-Driven Strategy: Replaces intuition-based acquisition with a mathematical framework, optimizing content budgets for maximum subscriber satisfaction.
-Dataset Information
+Dimensionality Reduction: Application of PCA to manage high-dimensional text data while retaining maximum variance.
 
-The analysis utilized two primary datasets:
+Imbalanced Data Handling: Utilization of SMOTE to balance the target classes for more robust training.
 
-titles.csv: Metadata regarding movies and shows (Runtime, Genres, IMDb Scores).
-credits.csv: Information regarding cast and crew popularity.
-Implementation Workflow
+Machine Learning: Comparative analysis of Random Forest, XGBoost, and LightGBM.
 
-Data Cleaning: Handled missing values and filtered non-numeric identifiers.
-Feature Engineering: Created targeted features like genre_count and normalized tmdb_popularity.
-Class Balancing: Applied SMOTE to synthesize minority class samples and prevent model bias.
-Hyperparameter Tuning: Used GridSearchCV to fine-tune the num_leaves and learning_rate for the final LightGBM model.
-Validation: Performed cross-validation to ensure the model generalizes well to unseen content.
-Final Model Performance
+🛠️ Tech Stack
+Language: Python
 
-The final LightGBM model achieved an outstanding 92% Accuracy, making it a highly reliable tool for predicting Amazon Prime "Hits". With a 90% Precision and 91% Recall, the model effectively balances the need to avoid "flops" while successfully discovering high-quality content. This performance is summarized by a strong 90% F1-Score, ensuring the model generalizes well to new, unseen titles.
+Libraries: Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
+
+NLP: NLTK, Scipy
+
+Algorithms: LightGBM (Champion Model), Random Forest, XGBoost
+
+Deployment: Joblib (Model Serialization)
+
+📊 Results
+The final model, built using LightGBM and optimized via GridSearchCV, achieved the following benchmarks:
+
+Accuracy: 92%
+
+F1-Score: 0.90
+
+Primary Predictors: TMDB Popularity, Runtime, and Genre Diversity were identified as the most influential factors for high IMDb ratings.
+
+📁 Repository Structure
+AmazonPrime_EDA_Submission.ipynb: Detailed data exploration, visualization, and hypothesis testing.
+
+AmazonPrime_ML_Submission.ipynb: Feature engineering, NLP pipeline, model training, and evaluation.
+
+best_lgbm_model.pkl: The serialized production-ready model.
+
+📥 How to Run
+Clone the repository:
+
+Bash
+https://github.com/Er-RahulDwivedi/Amazon_Prime_Video_Rating_Predictor.git
+Install dependencies:
+
+Bash
+pip install -r requirements.txt
+Run the Jupyter Notebooks to view the full pipeline and results.
+
+📝 Conclusion
+This project demonstrates that machine learning can effectively mitigate the financial risks of content acquisition. By identifying "Hidden Gems" and optimizing runtimes, streaming platforms can maximize user retention and maintain a competitive edge in the global market.
